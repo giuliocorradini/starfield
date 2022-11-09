@@ -14,15 +14,16 @@ public class Navigator extends TimerTask {
 
     public void run() {
         updateFrame();
+        sp.repaint();
+    }
 
+    public void computePositions() {
         for(Star s: stars)
-            updateStarLocation(s);
+        updateStarLocation(s);
 
         if(frameCounter % 20 == 0) {
             createStars();
         }
-
-        sp.repaint();
     }
 
     private void updateFrame() {

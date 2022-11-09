@@ -1,10 +1,8 @@
 import java.awt.Dimension;
-import java.util.Timer;
 
 import javax.swing.JFrame;
 
 public class Starfield extends JFrame {
-    Timer t;
     Starplotter plotter;
 
     public static void main(String args[]) {
@@ -22,9 +20,5 @@ public class Starfield extends JFrame {
 
         plotter = new Starplotter();
         this.add(plotter);
-
-        t = new Timer();
-        Navigator nv = new Navigator(plotter);
-        t.scheduleAtFixedRate(nv, 0, 1000 / 60);
     }
 }
