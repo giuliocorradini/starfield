@@ -36,7 +36,7 @@ public class Navigator extends TimerTask {
     }
     
     private void updateStarLocation(Star s) {
-        s.setDistance(s.getDistance() + 1);
+        s.setDistance(s.getDistance() + s.getSpeed());
         if(isOutOfView(s)) {
             this.stars.remove(s);
         }
@@ -45,7 +45,7 @@ public class Navigator extends TimerTask {
     private void createStars() {
         int n_new = (int)(Math.random() * 5);
         for(int i=0; i<n_new; i++) {
-            Star ns = new Star(2 * Math.PI * Math.random());
+            Star ns = new Star(2 * Math.PI * Math.random(), 1 + Math.random());
 
             this.stars.add(ns);
         }
